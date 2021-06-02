@@ -1,10 +1,11 @@
 [user]
 	name = Michael Gerlach
 	email = michael.gerlach@commercetools.com
+	signingkey = CD104F23B40BA82CA79D3DB33DDD4B421EFB0C2C
 [core]
 	excludesfile = ~/.gitignore_global
 [commit]
-	pgpsign = true
+	gpgsign = true
 [alias]
 	p = push
 	st = status

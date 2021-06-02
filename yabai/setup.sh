@@ -10,7 +10,7 @@ DESTINATION="$(realpath -m ~)"
 
 info "Configuraing yabai..."
 
-find .* -type f | while read fn; do
+find . -name ".*rc" -type f | while read fn; do
     fn=$(basename $fn)
     symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 done

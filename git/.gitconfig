@@ -11,7 +11,8 @@
 	st = status
 	ll = log --oneline
 	last = log -1 HEAD --stat
-	co = commit --signoff -m
+	ci = commit --signoff -m
+	co = checkout
 	rv = remote -v
 	rb = "!f() { \
 	    echo fetching...; \

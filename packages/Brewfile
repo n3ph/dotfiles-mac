@@ -13,6 +13,7 @@ cask 'sf-symbols'
 cask 'ubersicht'
 cask 'visual-studio-code'
 
+brew 'asdf'
 brew 'automake'
 brew 'awscli'
 brew 'binutils'

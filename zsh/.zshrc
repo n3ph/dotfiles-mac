@@ -1,3 +1,8 @@
+# I need $PATH extensions
+export PATH="/usr/local/opt/binutils/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+
 # Oh My ZSH
 export ZSH="Repositories/personal/ohmyzsh"
 ZSH_THEME="spaceship"
@@ -31,17 +36,3 @@ PYTHONENV="$HOME/.pyenv/"
 if [ -z "$PYHTONENV/bin/activate" ]; then
     source $PYTHONENV/bin/activate
 fi
-
-# I need $PATH extensions
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/binutils/bin:$PATH"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-
-export LDFLAGS="-L/usr/local/opt/binutils/lib"
-export LDFLAGS="-L/usr/local/opt/curl/lib"
-
-export CPPFLAGS="-I/usr/local/opt/binutils/include"
-export CPPFLAGS="-I/usr/local/opt/curl/include"
-
-export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"

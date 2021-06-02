@@ -8,8 +8,8 @@ cd "$DIR"
 COMMENT=\#*
 REPO_PATH=$(realpath -m ~/Repositories)
 
-find * -name "*.list" | while read file; do
-    folder="${file%.*}"
+find * -name "*.list" | while read fn; do
+    folder="${fn%.*}"
 
     info "Cloning $folder repositories..."
 
@@ -36,6 +36,6 @@ find * -name "*.list" | while read file; do
                 esac
             popd &> /dev/null
         fi
-    done < "$file"
+    done < "$fn"
     success "Finished cloning $folder repositories."
 done

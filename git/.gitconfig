@@ -7,13 +7,13 @@
 [commit]
 	gpgsign = true
 [alias]
-	p = push
-	st = status
-	ll = log --oneline
-	last = log -1 HEAD --stat
 	ci = commit --signoff -m
 	co = checkout
-	rv = remote -v
+	d = diff
+	gl = config --global -l
+	last = log -1 HEAD --stat
+	ll = log --oneline
+	p = push
 	rb = "!f() { \
 	    echo fetching...; \
 	    git fetch; \
@@ -45,9 +45,9 @@
 		echo ERROR: Operation failed; \
 	    fi; \
 	}; f"
-	d = diff
-	gl = config --global -l
+	rv = remote -v
 	se = !git rev-list --all | xargs git grep -F
+	st = status
 	unstage = reset HEAD --
 	uncommit = reset --soft HEAD~
 [help]

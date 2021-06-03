@@ -19,7 +19,6 @@
 
     "python.linting.pylintEnabled": true,
     "python.linting.pycodestyleEnabled": false,
-    "python.pythonPath": "/usr/local/bin/python3",
 
     "eslint.validate": [
         "javascript",
@@ -79,5 +78,12 @@
     "solidity.packageDefaultDependenciesContractsDirectory": "",
     "solidity.packageDefaultDependenciesDirectory": "node_modules",
     "solidity.compileUsingRemoteVersion": "latest",
-    "cSpell.enabled": false
+    "cSpell.enabled": false,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "python.defaultInterpreterPath": "/usr/local/bin/python3"
 }

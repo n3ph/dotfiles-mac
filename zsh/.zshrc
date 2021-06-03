@@ -17,13 +17,13 @@ export PYTHONDONTWRITEBYTECODE=1
 set -o noclobber
 
 # I want aliases
-alias ls='ls --color -G'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias ll='ls --color -alF'
-alias la='ls --color -A'
-alias l='ls --color -CF'
+alias egrep='egrep --color'
+alias fgrep='fgrep --color'
+alias grep='grep --color'
+alias l='ls'
+alias la='ls --almost-all'
+alias ll='ls --almost-all -l'
+alias ls='ls --classify --color --escape --no-group'
 
 # I want to keep shell history
 export HISTSIZE=10000

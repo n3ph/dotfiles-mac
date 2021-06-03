@@ -24,6 +24,7 @@ alias l='ls'
 alias la='ls --almost-all'
 alias ll='ls --almost-all -l'
 alias ls='ls --classify --color --escape --no-group'
+alias tree='tree -C'
 
 # I want to keep shell history
 export HISTSIZE=10000

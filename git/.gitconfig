@@ -7,11 +7,12 @@
 [commit]
 	gpgsign = true
 [alias]
-	ci = commit --signoff -m
+	ci = commit --signoff --message
 	co = checkout
 	d = diff
-	gl = config --global -l
-	last = log -1 HEAD --stat
+	ds = diff --staged
+	gl = config --global --list
+	last = log HEAD --stat -1
 	ll = log --oneline
 	p = push
 	rb = "!f() { \
@@ -46,9 +47,7 @@
 	    fi; \
 	}; f"
 	rv = remote -v
-	se = !git rev-list --all | xargs git grep -F
 	st = status
-	unstage = reset HEAD --
 	uncommit = reset --soft HEAD~
 [help]
 	autocorrect = 20

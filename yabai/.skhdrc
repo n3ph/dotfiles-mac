@@ -7,8 +7,11 @@ cmd - return : osascript -e 'tell application "iTerm2"' -e 'set newWindow to (cr
 # open dmenu
 cmd - d : open -a dmenu-mac
 
+# lock up
+cmd - l: pmset displaysleepnow
+
 # focus window
-cmd - left : yabai -m window --focus west || yabai -m display --focus west 
+cmd - left : yabai -m window --focus west || yabai -m display --focus west
 cmd - down : yabai -m window --focus south || yabai -m display --focus south
 cmd - up : yabai -m window --focus north || yabai -m display --focus north
 cmd - right : yabai -m window --focus east || yabai -m display --focus east

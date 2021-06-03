@@ -22,7 +22,12 @@ find * -name "*.list" | while read fn; do
             continue
         else
             pushd "$REPO_PATH/$folder" &> /dev/null
-            git clone "$repo"
+            if [[ "${repo_str%';'*}" != "$repo_str" ]]; then
+                repo="${repo_str%';'*}"
+                git clone "$repo" "${repo_str#*';'}"
+            else
+                git clone "$repo"
+            fi
             case $? in
                 128)
                     substep_success "$repo already exists."

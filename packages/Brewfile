@@ -70,5 +70,3 @@ brew 'watch'
 brew 'wget'
 brew 'yabai'
 brew 'zsh-git-prompt'
-
-mas 'Xcode', id: 497799835

@@ -4,3 +4,4 @@ git@github.com:commercetools/terraform-provider-commercetools.git
 git@github.com:commercetools/k8s-manifests.git
 git@github.com:commercetools/helm-charts.git
 git@github.com:commercetools/k8s-charts.git;helm-charts-public
+git@github.com:commercetools/ops-automation.git;puppet

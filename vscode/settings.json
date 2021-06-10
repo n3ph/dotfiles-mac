@@ -71,7 +71,7 @@
     "files.associations": {
         "*.cash": "solidity"
     },
-    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "terminal.integrated.shell.osx": "/bin/zsh",
     "diffEditor.ignoreTrimWhitespace": false,
     "git.confirmSync": false,
 

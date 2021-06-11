@@ -63,6 +63,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true,
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.keymap": "alternate",
@@ -79,11 +80,11 @@
     "solidity.packageDefaultDependenciesDirectory": "node_modules",
     "solidity.compileUsingRemoteVersion": "latest",
     "cSpell.enabled": false,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
-    "python.defaultInterpreterPath": "/usr/local/bin/python3"
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "terminal.external.osxExec": "iTerm.app",
+    "python.venvPath": "venv",
 }

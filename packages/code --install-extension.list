@@ -5,4 +5,5 @@ ms-azuretools.vscode-docker
 ms-python.python
 ms-python.vscode-pylance
 vincaslt.highlight-matching-tag
-wholroyd.hcl
+hasicorp.terraform
+oliversturm.fix-json

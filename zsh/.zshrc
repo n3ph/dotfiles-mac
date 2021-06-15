@@ -4,7 +4,7 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 
 # Oh My ZSH / Spaceship Prompt
-export ZSH="$HOME/Repositories/personal/ohmyzsh"
+export ZSH="$HOME/Repositories/external/ohmyzsh"
 ZSH_THEME="spaceship"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"

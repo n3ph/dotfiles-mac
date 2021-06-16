@@ -7,3 +7,4 @@ git@github.com:commercetools/k8s-charts.git;helm-charts-public
 git@github.com:commercetools/ops-automation.git;puppet
 git@github.com:commercetools/ops-credentials.git
 git@github.com:commercetools/hectopus.git
+git@github.com:commercetools/dockerfiles.git

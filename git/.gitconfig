@@ -11,7 +11,7 @@
 	ap = add --patch
 	ci = commit --signoff --message
 	co = checkout
-	d = diff
+	d = diff --ws-error-highlight=all
 	ds = diff --staged
 	gl = config --global --list
 	last = log HEAD --stat -1

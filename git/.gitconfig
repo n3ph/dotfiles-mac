@@ -11,8 +11,8 @@
 	ap = add --patch
 	ci = commit --signoff --message
 	co = checkout
-	d = diff --ws-error-highlight=all
-	ds = diff --staged  --ws-error-highlight=all
+	d = diff
+	ds = diff --staged
 	gl = config --global --list
 	last = log HEAD --stat -1
 	ll = log --oneline
@@ -49,8 +49,9 @@
 	    fi; \
 	}; f"
 	rv = remote -v
-	show = show  --ws-error-highlight=all
 	st = status
 	uncommit = reset --soft HEAD~
 [help]
 	autocorrect = 20
+[diff]
+	wsErrorHighlight = all

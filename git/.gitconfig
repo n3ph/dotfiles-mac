@@ -51,6 +51,7 @@
 	rv = remote -v
 	st = status
 	uncommit = reset --soft HEAD~
+	unstage = reset --
 [help]
 	autocorrect = 20
 [diff]

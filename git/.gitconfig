@@ -49,6 +49,7 @@
 	    fi; \
 	}; f"
 	rv = remote -v
+	show = show  --ws-error-highlight=all
 	st = status
 	uncommit = reset --soft HEAD~
 [help]

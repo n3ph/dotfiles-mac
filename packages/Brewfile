@@ -15,6 +15,7 @@ cask 'sf-symbols'
 cask 'tunnelblick'
 cask 'ubersicht'
 cask 'visual-studio-code'
+cask 'vlc'
 
 brew 'asdf'
 brew 'automake'

@@ -86,5 +86,13 @@
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
     "python.terminal.activateEnvInCurrentTerminal": true,
     "terminal.external.osxExec": "iTerm.app",
-    "python.venvPath": "venv"
+    "python.venvPath": "venv",
+
+    "[terraform]": {
+        "editor.formatOnSave": true
+    },
+
+    "terraform-ls.experimentalFeatures": {
+        "validateOnSave": true
+    }
 }

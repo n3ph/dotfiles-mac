@@ -16,6 +16,6 @@ find . -name ".*rc" | while read fn; do
 done
 
 substep_info "Linking spaceship prompt to oh-my-zsh..."
-symlink ~/Repositories/personal/spaceship-prompt/spaceship.zsh-theme ~/Repositories/personal/ohmyzsh/themes/spaceship.zsh-theme
+symlink ~/Repositories/external/spaceship-prompt/spaceship.zsh-theme ~/Repositories/external/ohmyzsh/themes/spaceship.zsh-theme
 
 success "Finished configuring zsh."

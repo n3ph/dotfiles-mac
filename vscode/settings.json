@@ -81,7 +81,7 @@
     "solidity.compileUsingRemoteVersion": "latest",
     "cSpell.enabled": false,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
+        "*.ipynb": "jupyter-notebook"
     },
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
     "python.terminal.activateEnvInCurrentTerminal": true,
@@ -94,5 +94,9 @@
 
     "terraform-ls.experimentalFeatures": {
         "validateOnSave": true
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
     }
 }

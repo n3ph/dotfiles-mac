@@ -5,12 +5,8 @@ export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 
-# Oh My ZSH / Spaceship Prompt
-export ZSH="$HOME/Repositories/external/ohmyzsh"
-ZSH_THEME="spaceship"
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
-source $ZSH/oh-my-zsh.sh
+# Starship prompt
+eval "$(starship init zsh)"
 
 # Disable Python Byte Code
 export PYTHONDONTWRITEBYTECODE=1

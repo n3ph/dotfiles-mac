@@ -1,0 +1,9 @@
+#compdef assume_role
+
+local state
+
+_arguments "1: :->aws_profile"
+
+case $state in
+    (aws_profile) _arguments "1:profiles:($(gsed -n -E 's/\[profile ([a-zA-Z0-9_\-]+)\]/\1/p' ~/.aws/config | gsed 's/profile\ //' | tr \\n " "))" ;;
+esac

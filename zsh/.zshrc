@@ -83,5 +83,10 @@ source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.in
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # zsh function autoload
-fpath=(~/.zsh_functions $fpath);
-autoload -U ~/.zsh_functions/assume_role
+fpath=(~/.zsh/functions $fpath);
+autoload -Uz $fpath[1]/*(.:t)
+
+# zsh completion autoload
+fpath=(~/.zsh/completions $fpath);
+autoload -Uz compinit
+compinit -u

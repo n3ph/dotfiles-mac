@@ -1,6 +1,6 @@
 #! /usr/bin/env zsh
 
-function __assume_role () {
+function _assume_role() {
     profile="${1}"
     test -z "${profile}" && echo "Specify AWS profile to use!" && return
 
@@ -24,4 +24,4 @@ function __assume_role () {
     export AWS_SECRET_ACCESS_KEY="$(echo ${assume_json} | jq -r -M '.Credentials.SecretAccessKey')"
     export AWS_SESSION_TOKEN="$(echo ${assume_json} | jq -r -M '.Credentials.SessionToken')"
 }
-__assume_role "${1}"
+_assume_role "${1}"

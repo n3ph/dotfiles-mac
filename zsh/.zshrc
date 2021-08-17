@@ -1,3 +1,5 @@
+#! /usr/bin/env zsh
+
 # I need $PATH extensions
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -58,6 +60,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias repos='cd ~/Repositories'
 alias rm='rm --interactive --preserve-root'
 alias rmdir='rmdir --parents --verbose'
+alias sed='gsed'
 alias tf='terraform'
 alias tree='tree -C'
 alias wget='wget --continue'
@@ -78,3 +81,7 @@ fi
 # google-cloud-sdk
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+# zsh function autoload
+fpath=(~/.zsh_functions $fpath);
+autoload -U ~/.zsh_functions/assume_role

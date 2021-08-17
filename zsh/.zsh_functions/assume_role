@@ -1,0 +1,27 @@
+#! /usr/bin/env zsh
+
+function __assume_role () {
+    profile="${1}"
+    test -z "${profile}" && echo "Specify AWS profile to use!" && return
+
+    role_arn=$(gsed -nr "/^\[profile ${profile}\]/ { :l /^role_arn[ ]*=/ { s/.*=[ ]*//; p; q;}; n; b l;}" ~/.aws/config)
+    mfa_serial=$(gsed -nr "/^\[profile ${profile}\]/ { :l /^mfa_serial[ ]*=/ { s/.*=[ ]*//; p; q;}; n; b l;}" ~/.aws/config)
+
+    test -z "${role_arn}" && echo "No role_arn configured for profile ${profile}!" && return
+    test -z "${mfa_serial}" && echo "No mfa_serial configured for profile ${profile}!" && return
+
+    mfa_token=$(ykman oath accounts code -s)
+    role_session_name="${profile}-$(uuidgen)"
+
+    assume_json=$(aws sts assume-role \
+        --role-arn ${role_arn} \
+        --role-session-name ${role_session_name} \
+        --serial-number "${mfa_serial}" \
+        --token-code $(echo "${mfa_token}") \
+        --duration-seconds 3600)
+
+    export AWS_ACCESS_KEY_ID="$(echo ${assume_json} | jq -r -M '.Credentials.AccessKeyId')"
+    export AWS_SECRET_ACCESS_KEY="$(echo ${assume_json} | jq -r -M '.Credentials.SecretAccessKey')"
+    export AWS_SESSION_TOKEN="$(echo ${assume_json} | jq -r -M '.Credentials.SessionToken')"
+}
+__assume_role "${1}"

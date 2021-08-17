@@ -10,7 +10,7 @@ DESTINATION="$(realpath -m ~)"
 
 info "Configuraing zsh..."
 
-find . -name ".*rc" | while read fn; do
+find . -name ".*zsh*" | while read fn; do
     fn=$(basename $fn)
     symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 done

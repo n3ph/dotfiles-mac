@@ -1,6 +1,10 @@
 #! /usr/bin/env zsh
 
 function assume_role() {
+    unset AWS_ACCESS_KEY_ID
+    unset AWS_SECRET_ACCESS_KEY
+    unset AWS_SESSION_TOKEN
+
     local profile="${1}"
     test -z "${profile}" && echo "Specify AWS profile to use!" && return
 
@@ -13,15 +17,19 @@ function assume_role() {
     local mfa_token=$(ykman oath accounts code -s)
     local role_session_name="${profile}-$(uuidgen)"
 
-    local assume_json=$(aws sts assume-role \
+    until assume_json=$(aws sts assume-role \
         --role-arn ${role_arn} \
         --role-session-name ${role_session_name} \
         --serial-number "${mfa_serial}" \
         --token-code $(echo "${mfa_token}") \
-        --duration-seconds 3600)
+        --duration-seconds 3600); do
+        local role_session_name="${profile}-$(uuidgen)"
+        local mfa_token=$(ykman oath accounts code -s)
+    done
 
     export AWS_ACCESS_KEY_ID="$(echo ${assume_json} | jq -r -M '.Credentials.AccessKeyId')"
     export AWS_SECRET_ACCESS_KEY="$(echo ${assume_json} | jq -r -M '.Credentials.SecretAccessKey')"
     export AWS_SESSION_TOKEN="$(echo ${assume_json} | jq -r -M '.Credentials.SessionToken')"
+
 }
 assume_role "${1}"

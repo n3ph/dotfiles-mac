@@ -64,9 +64,13 @@ alias va='source ./venv/bin/activate'
 alias ve='python3 -m venv ./venv'
 
 # I want to keep shell history
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=100000
+export SAVEHIST=100000
 export HISTFILE=$HOME/.zsh_history
+setopt inc_append_history
+setopt share_history
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
 
 # I like python envs
 PYTHONENV="$HOME/.pyenv/"

@@ -59,9 +59,10 @@ alias rmdir='rmdir --parents --verbose'
 alias sed='gsed'
 alias tf='terraform'
 alias tree='tree -C'
-alias wget='wget --continue'
+alias update='brew update; brew upgrade; brew cu -afy; brew cleanup'
 alias va='source ./venv/bin/activate'
 alias ve='python3 -m venv ./venv'
+alias wget='wget --continue'
 
 # I want to keep shell history
 export HISTSIZE=100000

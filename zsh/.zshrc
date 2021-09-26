@@ -4,6 +4,8 @@
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
 
 # Starship prompt
 eval "$(starship init zsh)"

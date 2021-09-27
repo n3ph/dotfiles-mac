@@ -9,3 +9,4 @@ git@github.com:commercetools/ops-credentials.git
 git@github.com:commercetools/hectopus.git
 git@github.com:commercetools/dockerfiles.git
 git@github.com:commercetools/netscanner.git
+git@github.com:commercetools/.github.git;github

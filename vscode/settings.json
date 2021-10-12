@@ -92,7 +92,7 @@
     },
 
     "terraform-ls.experimentalFeatures": {
-        "validateOnSave": false
+        "validateOnSave": true
     },
     "notebook.cellToolbarLocation": {
         "default": "right",

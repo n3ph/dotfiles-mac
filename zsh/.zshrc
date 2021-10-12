@@ -72,8 +72,12 @@ export SAVEHIST=100000
 export HISTFILE=$HOME/.zsh_history
 setopt inc_append_history
 setopt share_history
-bindkey '\e[A' history-beginning-search-backward
-bindkey '\e[B' history-beginning-search-forward
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '\e[A' up-line-or-beginning-search
+bindkey '\e[B' down-line-or-beginning-search
 
 # I like python envs
 PYTHONENV="$HOME/.pyenv/"

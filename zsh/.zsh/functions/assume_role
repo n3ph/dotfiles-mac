@@ -15,7 +15,9 @@ function assume_role() {
     test -z "${role_arn}" && echo "No role_arn configured for profile ${profile}!" && return
     test -z "${mfa_serial}" && echo "No mfa_serial configured for profile ${profile}!" && return
 
-    local mfa_token=$(ykman oath accounts code -s)
+    until test -n "${mfa_token}"
+        mfa_token=$(ykman oath accounts code -s); do
+    done
 
     until local assume_json=$(aws sts assume-role \
         --role-arn ${role_arn} \

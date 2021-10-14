@@ -20,11 +20,11 @@ function assume_role() {
     done
 
     until local assume_json=$(aws sts assume-role \
-        --role-arn ${role_arn} \
-        --role-session-name ${role_session_name} \
-        --serial-number "${mfa_serial}" \
-        --token-code $(echo "${mfa_token}") \
-        --duration-seconds 3600); do
+            --role-arn ${role_arn} \
+            --role-session-name ${role_session_name} \
+            --serial-number "${mfa_serial}" \
+            --token-code $(echo "${mfa_token}") \
+            --duration-seconds 3600); do
         local role_session_name="${profile}-$(uuidgen)"
         local mfa_token=$(ykman oath accounts code -s)
     done

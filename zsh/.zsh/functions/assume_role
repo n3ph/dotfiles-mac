@@ -1,20 +1,25 @@
 #! /usr/bin/env zsh
 
 function assume_role() {
+
+    # reset any former session details
     unset AWS_ACCESS_KEY_ID
     unset AWS_SECRET_ACCESS_KEY
     unset AWS_SESSION_TOKEN
 
+    # get profile to assume to
     local profile="${1}"
-    test -z "${profile}" && echo "Specify AWS profile to use!" && return
+    test -z "${profile}" && echo "Specify AWS profile to use ..." >&2 && return
 
+    # parse out the assume_role and the mfa_serial to use
     local role_arn=$(gsed -nr "/^\[profile ${profile}\]/ { :l /^role_arn[ ]*=/ { s/.*=[ ]*//; p; q;}; n; b l;}" ~/.aws/config)
-    local role_session_name="${profile}-$(uuidgen)"
     local mfa_serial=$(gsed -nr "/^\[profile ${profile}\]/ { :l /^mfa_serial[ ]*=/ { s/.*=[ ]*//; p; q;}; n; b l;}" ~/.aws/config)
 
-    test -z "${role_arn}" && echo "No role_arn configured for profile ${profile}!" && return
-    test -z "${mfa_serial}" && echo "No mfa_serial configured for profile ${profile}!" && return
+    # check assume_role and mfa_serial
+    test -z "${role_arn}" && echo "No role_arn configured for profile ${profile} ..." >&2 && return
+    test -z "${mfa_serial}" && echo "No mfa_serial configured for profile ${profile} ..." >&2 && return
 
+    # wait for YubiKey MFA token
     until test -n "${mfa_token}"
         mfa_token=$(ykman oath accounts code -s); do
     done
@@ -27,6 +32,7 @@ function assume_role() {
         --token-code $(echo "${mfa_token}") \
         --duration-seconds 3600)
 
+    # parse out STS session details and export them to env
     export AWS_ACCESS_KEY_ID="$(echo ${assume_json} | jq -r -M '.Credentials.AccessKeyId')"
     export AWS_SECRET_ACCESS_KEY="$(echo ${assume_json} | jq -r -M '.Credentials.SecretAccessKey')"
     export AWS_SESSION_TOKEN="$(echo ${assume_json} | jq -r -M '.Credentials.SessionToken')"

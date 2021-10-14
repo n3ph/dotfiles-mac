@@ -17,7 +17,7 @@ function assume_role() {
 
     local mfa_token=$(ykman oath accounts code -s)
 
-    until assume_json=$(aws sts assume-role \
+    until local assume_json=$(aws sts assume-role \
         --role-arn ${role_arn} \
         --role-session-name ${role_session_name} \
         --serial-number "${mfa_serial}" \

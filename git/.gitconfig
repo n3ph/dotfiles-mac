@@ -48,11 +48,7 @@
 			echo ERROR: Operation failed; \
 		fi; \
 	}; f"
-	root = "!f() {\
-		cd `git rev-parse --show-toplevel`; \
-	}; f"
 	rst = "!f() {\
-		cd `git rev-parse --show-toplevel`; \
 		git checkout master; \
 		git pull; \
 	}; f"

@@ -36,6 +36,6 @@ function assume_role() {
     export AWS_ACCESS_KEY_ID="$(echo ${assume_json} | jq -r -M '.Credentials.AccessKeyId')"
     export AWS_SECRET_ACCESS_KEY="$(echo ${assume_json} | jq -r -M '.Credentials.SecretAccessKey')"
     export AWS_SESSION_TOKEN="$(echo ${assume_json} | jq -r -M '.Credentials.SessionToken')"
-
 }
+
 assume_role "${1}"

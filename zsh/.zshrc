@@ -7,6 +7,9 @@ export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # Starship prompt
 eval "$(starship init zsh)"
 

@@ -1,6 +1,7 @@
 tap 'homebrew/cask-versions'
 tap 'buo/cask-upgrade'
 
+cask 'alacritty'
 cask 'dashlane'
 cask 'dmenu-mac'
 cask 'docker'

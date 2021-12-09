@@ -2,7 +2,7 @@
 cmd + ctrl + shift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # open terminal
-cmd - return : osascript -e 'tell application "iTerm2"' -e 'set newWindow to (create window with default profile)' -e 'end tell'
+cmd - return : open -n -a Alacritty
 
 # open dmenu
 cmd - d : open -a dmenu-mac

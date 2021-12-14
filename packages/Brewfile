@@ -18,6 +18,7 @@ cask 'tunnelblick'
 cask 'ubersicht'
 cask 'visual-studio-code'
 cask 'vlc'
+cask 'zoom'
 
 brew 'asdf'
 brew 'automake'

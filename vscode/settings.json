@@ -96,5 +96,8 @@
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
-    }
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "explorer.confirmDragAndDrop": false,
+    "editor.formatOnSave": true
 }

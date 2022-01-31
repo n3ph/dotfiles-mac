@@ -1,3 +1,4 @@
 git@github.com:commercetools/mongodb-atlas-assertions.git
 git@github.com:commercetools/mongodbatlas_exporter.git
 git@github.com:commercetools/atlas-logs-k8s.git
+git@github.com:commercetools/masterless-puppet.git
